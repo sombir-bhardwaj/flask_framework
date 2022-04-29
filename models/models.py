@@ -9,3 +9,4 @@ class user(db.Model):
 
     def __init__(self,name):
         self.name=name
+# heloo my name is vivek
