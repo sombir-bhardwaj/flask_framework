@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Sombir_don</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  </head>
+<body>
+    <div style="clear:both;"></div>
+    <div class="container mt-4">
+          <div class="col-5 text-left">
+               <h2>{% if user_data.id %}Update{% else %}Add{% endif %} User</h2>
+              <form method="post" enctype="multipart/form-data" id="user_creation">
+                   <div class="form-group required">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" required name="name" placeholder="Enter Name" value="{{user_data.name}}">
+                   </div>
+                   <div class="form-group required">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" required placeholder="Enter Age" name="age" value="{{user_data.age}}">
+                   </div>
+                   <div class="form-group required">
+                        <label for="gender">Gender:</label>
+                        <label class="radio-inline">
+                          <input type="radio" name="gender" value='1' {% if user_data.gender== 1 or not user_data.gender %}checked="checked" {% endif %}>Male
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="gender" value='0' {% if user_data.gender== 0 %}checked="checked" {% endif %}>Female
+                        </label>
+                        </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+    </div>
+</body>
+</html>
